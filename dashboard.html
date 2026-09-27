@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation Library · FrameForge</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="dash-shell">
+
+  <!-- ============================================================ -->
+  <!-- SIDEBAR -->
+  <!-- ============================================================ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <span class="brand-mark"></span>
+      <span class="h-display" style="font-weight:700;">FrameForge</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Library</div>
+      <a href="#" class="nav-item active" data-page="library">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+        Animations
+      </a>
+
+      <div class="sidebar-section-label">Account</div>
+      <a href="#" class="nav-item" data-page="profile">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></span>
+        Profile
+      </a>
+      <a href="#" class="nav-item" data-page="settings">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span>
+        Settings
+      </a>
+      <a href="#" class="nav-item" id="logoutBtn">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg></span>
+        Logout
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="sidebar-user" id="sidebarUserBtn">
+        <div class="av" id="sidebarAvatar">?</div>
+        <div>
+          <div class="u-name" id="sidebarUserName">—</div>
+          <div class="u-email" id="sidebarUserEmail">—</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================ -->
+  <!-- MAIN -->
+  <!-- ============================================================ -->
+  <div class="dash-main">
+
+    <header class="topbar">
+      <button class="hamburger btn-icon" id="hamburgerBtn" aria-label="Toggle sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <div class="topbar-actions">
+        <div class="theme-switch" id="themeSwitch">
+          <button data-theme="light" aria-label="Light theme">☀</button>
+          <button data-theme="dark" aria-label="Dark theme">☾</button>
+          <button data-theme="system" aria-label="System theme">◐</button>
+        </div>
+
+        <div class="topbar-user" id="topbarUserBtn">
+          <div class="av" id="topbarAvatar">?</div>
+          <span class="chev">▾</span>
+          <div class="dropdown" id="userDropdown">
+            <div class="dropdown-item" data-page="profile"><span>👤</span> View profile</div>
+            <div class="dropdown-item" data-page="settings"><span>⚙</span> Settings</div>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" id="dropdownLogoutBtn"><span>⏻</span> Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="dash-content">
+
+      <!-- ================= ANIMATION LIBRARY ================= -->
+      <section class="page-view active" id="page-library">
+        <div class="page-head">
+          <div>
+            <h1>Animation Library</h1>
+            <p>Browse, preview, and copy ready-to-use CSS animations for your next project.</p>
+          </div>
+        </div>
+
+        <div class="anim-toolbar-wrap">
+          <div class="toolbar">
+            <div class="search-box">
+              <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+              <input type="text" id="animSearch" placeholder="Search animations by name...">
+            </div>
+          </div>
+          <div class="filter-pills" id="animCategoryPills"></div>
+        </div>
+
+        <div class="card-grid" id="animGrid"></div>
+      </section>
+
+      <!-- ================= PROFILE ================= -->
+      <section class="page-view" id="page-profile">
+        <div class="page-head">
+          <div>
+            <h1>Profile</h1>
+            <p>Manage your FrameForge creator profile and animation activity.</p>
+          </div>
+        </div>
+
+        <div class="profile-header">
+          <div class="profile-avatar-wrap">
+            <div class="av profile-avatar" id="profileAvatarBig">?</div>
+            <button class="avatar-upload-btn" id="avatarUploadBtn" aria-label="Change photo">✎</button>
+            <input type="file" id="avatarFileInput" accept="image/*" style="display:none;">
+          </div>
+
+          <div>
+            <div class="profile-name" id="profileNameDisplay">—</div>
+            <div class="profile-username" id="profileUsernameDisplay">@—</div>
+            <div class="profile-bio" id="profileBioDisplay">—</div>
+            <div id="profileSkillsDisplay" style="margin-top:10px;"></div>
+          </div>
+
+          <div class="profile-stats">
+            <div class="pstat">
+              <b id="profileStatProjects">0</b>
+              <span>Animations</span>
+            </div>
+            <div class="pstat">
+              <b id="profileStatTasks">0</b>
+              <span>Codes copied</span>
+            </div>
+            <div class="pstat">
+              <b id="profileStatDays">0</b>
+              <span>Days active</span>
+            </div>
+          </div>
+
+          <button class="btn btn-ghost" id="editProfileBtn">Edit profile</button>
+        </div>
+
+        <div class="panel" id="profileEditPanel" style="display:none;">
+          <div class="panel-head">
+            <h3>Edit profile</h3>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="editName">Full name</label>
+              <input type="text" id="editName">
+            </div>
+            <div class="field">
+              <label for="editUsername">Username</label>
+              <input type="text" id="editUsername">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="editEmail">Email</label>
+            <input type="email" id="editEmail">
+          </div>
+
+          <div class="field">
+            <label for="editBio">Bio</label>
+            <textarea id="editBio"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="editSkills">Skills (comma separated)</label>
+            <input type="text" id="editSkills" placeholder="CSS, JavaScript, Web Design">
+          </div>
+
+          <div style="display:flex; gap:10px; justify-content:flex-end;">
+            <button class="btn btn-ghost" id="cancelEditProfileBtn">Cancel</button>
+            <button class="btn btn-primary" id="saveProfileBtn">Save changes</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SETTINGS ================= -->
+      <section class="page-view" id="page-settings">
+        <div class="page-head">
+          <div>
+            <h1>Settings</h1>
+            <p>Customize how FrameForge looks and works for you.</p>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <div class="settings-nav">
+            <button class="active" data-pane="appearance">Appearance</button>
+            <button data-pane="account">Account</button>
+            <button data-pane="interface">Interface</button>
+          </div>
+
+          <div>
+            <!-- APPEARANCE -->
+            <div class="settings-pane active panel" id="pane-appearance">
+              <div class="setting-row">
+                <div>
+                  <div class="s-title">Theme</div>
+                  <div class="s-desc">Choose how FrameForge looks on your device.</div>
+                </div>
+                <div class="theme-options" id="settingsThemeOptions">
+                  <div class="theme-opt" data-theme="light">Light</div>
+                  <div class="theme-opt" data-theme="dark">Dark</div>
+                  <div class="theme-opt" data-theme="system">System</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACCOUNT -->
+            <div class="settings-pane panel" id="pane-account">
+              <div class="field"><label for="settingsName">Name</label><input type="text" id="settingsName"></div>
+              <div class="field"><label for="settingsEmail">Email</label><input type="email" id="settingsEmail"></div>
+              <div class="field">
+                <label for="settingsNewPassword">New password</label>
+                <input type="password" id="settingsNewPassword" placeholder="Leave blank to keep current password">
+              </div>
+              <div class="field"><label for="settingsConfirmPassword">Confirm new password</label><input type="password" id="settingsConfirmPassword"></div>
+              <button class="btn btn-primary" id="saveAccountBtn">Save account changes</button>
+            </div>
+
+            <!-- INTERFACE -->
+            <div class="settings-pane panel" id="pane-interface">
+              <div class="setting-row">
+                <div><div class="s-title">Compact mode</div><div class="s-desc">Reduce padding across cards and lists.</div></div>
+                <div class="toggle" id="toggleCompact"></div>
+              </div>
+              <div class="setting-row">
+                <div><div class="s-title">Sidebar always expanded</div><div class="s-desc">Keep the full sidebar open on smaller screens.</div></div>
+                <div class="toggle" id="toggleSidebarExpanded"></div>
+              </div>
+              <div class="setting-row">
+                <div><div class="s-title">Interface animations</div><div class="s-desc">Disable motion across the dashboard.</div></div>
+                <div class="toggle on" id="toggleAnimations"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- CODE VIEWER MODAL -->
+<!-- ============================================================ -->
+<div class="modal-overlay" id="codeModalOverlay">
+  <div class="modal code-modal">
+    <div class="modal-head">
+      <h3 id="codeModalTitle">Animation code</h3>
+      <button class="btn-icon" data-close-modal>&times;</button>
+    </div>
+
+    <div class="code-tabs">
+      <button class="code-tab active" data-code-tab="html">HTML</button>
+      <button class="code-tab" data-code-tab="css">CSS</button>
+    </div>
+
+    <div class="code-pane active" id="codePaneHtml">
+      <div class="code-block-wrap">
+        <button class="btn btn-ghost btn-sm code-copy-btn" data-copy-target="html">Copy</button>
+        <pre class="code-block" id="codeBlockHtml"></pre>
+      </div>
+    </div>
+
+    <div class="code-pane" id="codePaneCss">
+      <div class="code-block-wrap">
+        <button class="btn btn-ghost btn-sm code-copy-btn" data-copy-target="css">Copy</button>
+        <pre class="code-block" id="codeBlockCss"></pre>
+      </div>
+    </div>
+
+    <div class="modal-foot">
+      <button class="btn btn-ghost" data-close-modal>Close</button>
+      <button class="btn btn-primary" id="codeModalCopyCss">Copy CSS</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/animations-data.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

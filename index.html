@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FrameForge</title>
+<meta name="description" content="**FrameForge** is a website where users can explore different CSS animations, preview them, and easily copy the code syntax to use in their own projects.
+">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="route-field" id="routeField" aria-hidden="true"></div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- ============================================================ -->
+<!-- LANDING PAGE -->
+<!-- ============================================================ -->
+<div id="landingPage">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand"><span class="brand-mark"></span> FrameForge</a>
+      <div class="nav-links nav-toggle-hide">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions nav-toggle-hide">
+        <button class="btn btn-ghost btn-sm" id="navLoginBtn">Log in</button>
+        <button class="btn btn-primary btn-sm" id="navGetStartedBtn">Get started</button>
+      </div>
+      <button class="nav-toggle" id="mobileMenuToggle" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="btn btn-ghost" id="mobileLoginBtn" style="margin-top:14px;">Log in</button>
+      <button class="btn btn-primary" id="mobileGetStartedBtn" style="margin-top:10px;">Get started</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow-route reveal in">
+        <span class="pulse"></span> Explore CSS animations — built for creators
+      </div>
+
+      <h1 class="h-display">
+        Create the motion.<br><em>Forge the experience.</em>
+      </h1>
+
+      <p>
+        FrameForge makes it easy to discover, preview, and use beautiful CSS
+        animations. Explore ready-to-use effects, view the syntax, and copy
+        the code directly into your own projects.
+      </p>
+
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="heroGetStartedBtn">
+          Explore Animations
+        </button>
+
+        <button class="btn btn-ghost" id="heroLoginBtn">
+          Learn More
+        </button>
+      </div>
+
+      <div class="hero-proof">
+        <div class="avatar-stack">
+          <span>CSS</span>
+          <span>JS</span>
+          <span>UI</span>
+          <span>+</span>
+        </div>
+
+        <span>
+          Discover creative animations for your next project
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      <div class="hero-visual">
+        <div class="route-card">
+          <svg viewBox="0 0 320 220" fill="none">
+            <defs>
+              <linearGradient id="routeGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4fd1c5"/>
+                <stop offset="100%" stop-color="#8b8ff0"/>
+              </linearGradient>
+            </defs>
+            <path class="route-path" d="M20,180 C 80,180 60,60 130,60 S 220,150 300,40"/>
+            <path class="route-path-active" d="M20,180 C 80,180 60,60 130,60 S 220,150 300,40"/>
+            <circle class="route-node done" cx="20" cy="180" r="7"/>
+            <circle class="route-node done" cx="130" cy="60" r="7"/>
+            <circle class="route-node" cx="300" cy="40" r="7"/>
+          </svg>
+          <div class="waypoint-list">
+            <div class="waypoint"><span class="dot on"></span><span class="label"><strong>Browse</strong> the animation library</span></div>
+            <div class="waypoint"><span class="dot on"></span><span class="label"><strong>Preview</strong> the effect live</span></div>
+            <div class="waypoint"><span class="dot off"></span><span class="label"><strong>Copy</strong> the CSS into your project</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-strip">
+    <div class="stats-grid">
+      <div class="reveal"><div class="stat-num h-display">27+</div><div class="stat-label">Ready-made animations</div></div>
+      <div class="reveal"><div class="stat-num h-display">9</div><div class="stat-label">Animation categories</div></div>
+      <div class="reveal"><div class="stat-num h-display">100%</div><div class="stat-label">Copy-paste ready</div></div>
+      <div class="reveal"><div class="stat-num h-display">0</div><div class="stat-label">Dependencies required</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="section-head reveal">
+      <h2 class="h-display">Everything on one map</h2>
+      <p> FrameForge features a collection of CSS animations, live previews, easy-to-copy CSS code, animation categories, a search function, a user-friendly interface, responsive design, and a favorites feature for saving useful animations.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">▶</div>
+        <h3>Live previews</h3>
+        <p>Every animation plays right on the card — no guessing what the code will actually look like.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">▤</div>
+        <h3>Organized categories</h3>
+        <p>Text, buttons, hover effects, loading, entrances, exits, cards, backgrounds, and icons — all sorted for you.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">⌕</div>
+        <h3>Search &amp; filter</h3>
+        <p>Find the exact effect you need by name or category in seconds.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">{ }</div>
+        <h3>Syntax-highlighted code</h3>
+        <p>View the exact HTML and CSS for any animation in a clean, readable code viewer.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">⧉</div>
+        <h3>One-click copy</h3>
+        <p>Copy the exact CSS straight to your clipboard and drop it into your own project.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">◑</div>
+        <h3>Light &amp; dark mode</h3>
+        <p>Work comfortably day or night; the interface remembers your preference.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="about-wrap">
+      <div class="reveal">
+        <h2 class="h-display">Built for developers who'd rather ship than write keyframes from scratch</h2>
+        <p>FrameForge is a creative website designed to help developers discover and use CSS animations easily. It provides a collection of ready-to-use animations where users can preview the effect, view the CSS syntax, and copy the code directly for their own websites and projects.</p>
+        <p>FrameForge makes learning and creating animations simple, fast, and accessible.</p>
+      </div>
+      <div class="about-panel reveal">
+        <div class="about-metric"><span>Animations</span><span>27+</span></div>
+        <div class="about-metric"><span>Categories</span><span>9</span></div>
+        <div class="about-metric"><span>Backend required</span><span>None</span></div>
+        <div class="about-metric"><span>Avg. copy time</span><span>&lt; 2 sec</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-head reveal">
+      <h2 class="h-display">Chart your first route</h2>
+      <p>Questions before you start? Send a note — we usually reply within a day.</p>
+    </div>
+    <form class="contact-wrap reveal" id="contactForm" novalidate>
+      <div class="form-grid-2">
+        <div class="field">
+          <label for="cName">Name</label>
+          <input type="text" id="cName" placeholder="Ada Okafor" required>
+          <div class="field-error" id="cNameErr"></div>
+        </div>
+        <div class="field">
+          <label for="cEmail">Email</label>
+          <input type="email" id="cEmail" placeholder="ada@company.com" required>
+          <div class="field-error" id="cEmailErr"></div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cMessage">Message</label>
+        <textarea id="cMessage" placeholder="Tell us what you're trying to ship..." required></textarea>
+        <div class="field-error" id="cMessageErr"></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Send message</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <a href="#home" class="brand"><span class="brand-mark"></span> FrameForge</a>
+    <div class="foot-links">
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <span>&copy; 2026 FrameForge. All rights reserved.</span>
+  </footer>
+</div>
+
+<!-- ============================================================ -->
+<!-- AUTHENTICATION PAGE -->
+<!-- ============================================================ -->
+<div id="authPage" style="display:none;">
+  <div class="auth-shell">
+    <div class="auth-side">
+      <a href="#" class="brand" id="authBrandLink"><span class="brand-mark"></span> FrameForge</a>
+      <div class="auth-quote h-display">"The <span>fastest way</span> I've found to grab a polished CSS animation and ship it."</div>
+      <div class="waypoint-list">
+        <div class="waypoint"><span class="dot on"></span><span class="label"><strong>27+ animations</strong> across 9 categories</span></div>
+        <div class="waypoint"><span class="dot on"></span><span class="label"><strong>Live previews</strong> for every effect</span></div>
+        <div class="waypoint"><span class="dot off"></span><span class="label"><strong>Copy CSS</strong> in one click</span></div>
+      </div>
+    </div>
+
+    <div class="auth-main">
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="tabLogin" data-tab="login">Log in</div>
+          <div class="auth-tab" id="tabRegister" data-tab="register">Register</div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form class="auth-form active" id="loginForm" novalidate>
+          <h2>Welcome back</h2>
+          <p class="sub">Log in to pick up where you left off.</p>
+
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="you@company.com" autocomplete="username">
+            <div class="field-error" id="loginEmailErr"></div>
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <div class="pw-wrap">
+              <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
+              <button type="button" class="pw-toggle" data-target="loginPassword">SHOW</button>
+            </div>
+            <div class="field-error" id="loginPasswordErr"></div>
+          </div>
+          <div class="form-row-between">
+            <label class="checkbox-row"><input type="checkbox" id="rememberMe"> Remember me</label>
+            <a href="#" class="link-teal" id="forgotPasswordLink">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          <p class="auth-switch">Don't have an account? <a href="#" class="link-teal" data-switch="register">Register</a></p>
+          <p class="auth-switch" style="margin-top:8px; font-size:0.78rem;">Demo only — this is a front-end simulation; passwords are not encrypted or sent anywhere.</p>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form class="auth-form" id="registerForm" novalidate>
+          <h2>Create your account</h2>
+          <p class="sub">Start charting your team's next route.</p>
+
+          <div class="field">
+            <label for="regName">Full name</label>
+            <input type="text" id="regName" placeholder="Ada Okafor">
+            <div class="field-error" id="regNameErr"></div>
+          </div>
+          <div class="field">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" placeholder="you@company.com" autocomplete="username">
+            <div class="field-error" id="regEmailErr"></div>
+          </div>
+          <div class="field">
+            <label for="regPassword">Password</label>
+            <div class="pw-wrap">
+              <input type="password" id="regPassword" placeholder="At least 8 characters" autocomplete="new-password">
+              <button type="button" class="pw-toggle" data-target="regPassword">SHOW</button>
+            </div>
+            <div class="field-error" id="regPasswordErr"></div>
+          </div>
+          <div class="field">
+            <label for="regConfirm">Confirm password</label>
+            <div class="pw-wrap">
+              <input type="password" id="regConfirm" placeholder="Re-enter your password" autocomplete="new-password">
+              <button type="button" class="pw-toggle" data-target="regConfirm">SHOW</button>
+            </div>
+            <div class="field-error" id="regConfirmErr"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+          <p class="auth-switch">Already have an account? <a href="#" class="link-teal" data-switch="login">Log in</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   animations.css — styling for the CSS Animation Library section
+   (card grid, previews, copy badges, and the code-viewer modal)
+   ========================================================================== */
+
+.anim-toolbar-wrap { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
+
+.anim-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform var(--dur-mid) var(--ease), border-color var(--dur-mid) var(--ease);
+}
+.anim-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+
+.anim-preview {
+  height: 120px;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+}
+
+.anim-card-body { display: flex; flex-direction: column; gap: 6px; }
+.anim-name { font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; }
+.anim-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.anim-badge {
+  font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+  background: var(--teal-soft); color: var(--teal);
+}
+.anim-desc { font-size: 0.85rem; color: var(--fg-mid); flex: 1; }
+
+.anim-actions { display: flex; gap: 8px; flex-wrap: wrap; position: relative; }
+.anim-actions .btn { padding: 8px 14px; font-size: 0.8rem; }
+
+.anim-copied-badge {
+  position: absolute;
+  top: -32px;
+  right: 0;
+  background: var(--teal);
+  color: #04120f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.anim-copied-badge.show { opacity: 1; transform: translateY(0); }
+
+.anim-empty { grid-column: 1 / -1; }
+
+/* ---------------- code viewer modal ---------------- */
+.code-modal { max-width: 640px; width: 92vw; }
+
+.code-tabs {
+  display: flex; gap: 6px; background: var(--surface-2); padding: 3px; border-radius: 9px; margin-bottom: 14px;
+}
+.code-tab { flex: 1; text-align: center; padding: 8px; border-radius: 7px; font-size: 0.82rem; font-weight: 600; color: var(--fg-mid); }
+.code-tab.active { background: var(--surface); color: var(--teal); }
+
+.code-pane { display: none; }
+.code-pane.active { display: block; }
+
+.code-block-wrap { position: relative; }
+.code-copy-btn { position: absolute; top: 10px; right: 10px; }
+
+.code-block {
+  background: var(--ink-950);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  padding-top: 44px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre;
+  color: var(--fg-mid);
+}
+:root[data-theme="light"] .code-block { background: #10152a; color: #c9d2e6; }
+
+.tok-sel     { color: #8b8ff0; }
+.tok-prop    { color: #4fd1c5; }
+.tok-val     { color: #f2b866; }
+.tok-punct   { color: #6b7590; }
+.tok-comment { color: #4c556e; font-style: italic; }
+.tok-tag     { color: #f2777a; }
+.tok-attr    { color: #4fd1c5; }
+.tok-str     { color: #f2b866; }
+
+/* ---------------- responsive ---------------- */
+@media (max-width: 1024px) {
+  .anim-preview { height: 110px; }
+}
+@media (max-width: 720px) {
+  .code-modal { width: 94vw; }
+}
